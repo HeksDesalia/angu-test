@@ -6,8 +6,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { FormElementComponent } from './form-element/form-element.component';
-import { FORM_TYPE } from '../app.constants';
+import { FormElementComponent } from '../../elements/form-element/form-element.component';
+import { FORM_TYPE } from '../../app.constants';
 @Component({
   selector: 'app-form-test',
   standalone: true,

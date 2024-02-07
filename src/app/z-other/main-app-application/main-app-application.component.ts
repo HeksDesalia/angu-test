@@ -5,7 +5,7 @@ import {
   Input,
   ViewEncapsulation,
 } from '@angular/core';
-import { Server } from 'src/app/models/server';
+import { Server } from 'src/app/z-other/models/server';
 
 @Component({
   selector: 'app-main-app-application',

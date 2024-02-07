@@ -1,30 +1,31 @@
 import { Observable, of } from 'rxjs';
-import { ServerService } from '../../services/server.service';
+import { ServerService } from '../services/server.service';
 import { AsyncPipe, CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
-import { Server } from 'src/app/models/server';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  OnInit,
+} from '@angular/core';
+import { Server } from 'src/app/z-other/models/server';
 import { MainAppApplicationComponent } from '../main-app-application/main-app-application.component';
 
 @Component({
   selector: 'app-main-app-apps-container',
   standalone: true,
-  imports: [
-    CommonModule,
-    AsyncPipe,
-    MainAppApplicationComponent
-  ],
+  imports: [CommonModule, AsyncPipe, MainAppApplicationComponent],
   templateUrl: './main-app-apps-container.component.html',
   styleUrl: './main-app-apps-container.component.less',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainAppAppsContainerComponent implements OnInit{ 
+export class MainAppAppsContainerComponent implements OnInit {
   // Attributs
   servers: Observable<Server[]>;
 
   // Services
-  serverService: ServerService =  inject(ServerService);
+  serverService: ServerService = inject(ServerService);
 
-  constructor(){
+  constructor() {
     this.servers = of([]);
   }
 

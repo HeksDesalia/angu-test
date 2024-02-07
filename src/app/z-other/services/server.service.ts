@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SERVEUR_VLANS } from '../app.constants';
+import { SERVEUR_VLANS } from '../../app.constants';
 import { Server } from '../models/server';
 import { Observable, of } from 'rxjs';
 

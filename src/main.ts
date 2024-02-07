@@ -7,19 +7,26 @@ import { Route, provideRouter } from '@angular/router';
 
 export const ROUTES: Route[] = [
   {
-    path: 'servers',
+    path: '',
     loadComponent: () =>
-      import('./app/main-app/main-app.component').then(
-        (mod) => mod.MainAppComponent
+      import('./app/document-generator/document-generator.component').then(
+        (mod) => mod.DocumentGeneratorComponent
       ),
   },
-  {
-    path: 'forms',
-    loadComponent: () =>
-      import('./app/form-test/form-test.component').then(
-        (mod) => mod.FormTestComponent
-      ),
-  },
+  // {
+  //   path: 'servers',
+  //   loadComponent: () =>
+  //     import('./app/main-app/main-app.component').then(
+  //       (mod) => mod.MainAppComponent
+  //     ),
+  // },
+  // {
+  //   path: 'forms',
+  //   loadComponent: () =>
+  //     import('./app/form-test/form-test.component').then(
+  //       (mod) => mod.FormTestComponent
+  //     ),
+  // },
   {
     path: 'document-generator',
     loadComponent: () =>
