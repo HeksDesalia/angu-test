@@ -1,0 +1,30 @@
+@import "colors";
+:host {
+  display: flex;
+  min-width: 250px;
+  width: 15vw;
+  margin: 15px;
+  background-color: @color-main-3;
+  .application {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .application--informations {
+      text-align: center;
+      font-weight: 500;
+      background-color: @color-main-2;
+      padding: 5px;
+      .application--name {
+      }
+      .application--vlan {
+      }
+    }
+    .application--links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+    }
+  }
+}

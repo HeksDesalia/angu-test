@@ -1,0 +1,7 @@
+<main>
+  <div class="app-container">
+    @for (server of servers|async; track server.id) {
+    <app-main-app-application [server]="server" />
+    }
+  </div>
+</main>

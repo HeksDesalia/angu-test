@@ -1,0 +1,14 @@
+<div class="application">
+  <div class="application--informations">
+    <div class="application--name">🖥️ {{ server.name }}</div>
+    <div class="application--vlan">🤔 {{ server.vlan }}</div>
+  </div>
+
+  <div class="application--links">
+    @for (instance of server.instances; track instance.id) {
+    <div class="application-link">
+      <a href="#">{{ instance.name }} - {{ instance.application?.name }}</a>
+    </div>
+    }
+  </div>
+</div>

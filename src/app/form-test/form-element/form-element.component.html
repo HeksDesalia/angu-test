@@ -1,0 +1,59 @@
+@if(formControl){
+<div class="form--container">
+  <div class="form">
+    @switch (type) { @case(FORM_TYPE.TEXT){
+    <mat-form-field>
+      @if(label){
+      <mat-label>{{ label }}</mat-label>
+      }
+      <input
+        matInput
+        [formControl]="formControl"
+        [ariaLabel]="label"
+        [placeholder]="placeholder"
+      />
+      @if(formControl.invalid || submitted){
+      <mat-error>{{ getErrorMessage() }}</mat-error>
+      }
+    </mat-form-field>
+    } @case(FORM_TYPE.AUTOCOMPLETE){
+    <mat-form-field>
+      @if(label){
+      <mat-label>{{ label }}</mat-label>
+      }
+      <input
+        type="text"
+        [placeholder]="placeholder"
+        [ariaLabel]="label"
+        matInput
+        [formControl]="formControl"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete #auto="matAutocomplete">
+        @for (option of filteredOptions | async; track option) {
+        <mat-option [value]="option">{{ option }}</mat-option>
+        }
+      </mat-autocomplete>
+      @if(formControl.invalid || submitted){
+      <mat-error>{{ getErrorMessage() }}</mat-error>
+      }
+    </mat-form-field>
+    } @case(FORM_TYPE.NUMBER){
+    <mat-form-field>
+      @if(label){
+      <mat-label>{{ label }}</mat-label>
+      }
+      <input
+        matInput
+        type="number"
+        [formControl]="formControl"
+        [placeholder]="placeholder"
+      />
+      @if(formControl.invalid || submitted){
+      <mat-error>{{ getErrorMessage() }}</mat-error>
+      }
+    </mat-form-field>
+    } }
+  </div>
+</div>
+}

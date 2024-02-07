@@ -1,0 +1,19 @@
+<app-form-element
+  [label]="'Text'"
+  [placeholder]="'Input text'"
+  [formControl]="textInputFc"
+  [type]="FORM_TYPE.TEXT"
+/>
+<app-form-element
+  [label]="'AutoComplete'"
+  [placeholder]="'Input autocomplete'"
+  [formControl]="arrayInputFc"
+  [type]="FORM_TYPE.AUTOCOMPLETE"
+  [options]="options"
+/>
+<app-form-element
+  [label]="'Number'"
+  [placeholder]="'Input number'"
+  [formControl]="numberInputFc"
+  [type]="FORM_TYPE.NUMBER"
+/>

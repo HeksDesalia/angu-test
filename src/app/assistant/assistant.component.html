@@ -1,0 +1,37 @@
+<mat-stepper [linear]="isLinear" #stepper>
+  @for (step of steps; track $index) {
+  <mat-step [stepControl]="step.formGroup">
+    <ng-template matStepLabel>{{ step.name }}</ng-template>
+    <div class="mat-step--container">
+      <div class="mat-step--inputs">
+        @for (stepInput of step.stepInputs; track $index){
+        <div class="mat-step--input">
+          <app-form-element
+            [formControl]="stepInput.formControl"
+            [type]="stepInput.type"
+            [label]="stepInput.label"
+            [placeholder]="stepInput.placeholder"
+            [options]="stepInput.options"
+            [submitted]="step.submitted"
+            ngDefaultControl
+          />
+        </div>
+
+        }
+      </div>
+
+      <div class="mat-step--button">
+        <button mat-button (click)="nextStep(step)">Next</button>
+      </div>
+    </div>
+  </mat-step>
+  }
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-stepper>
